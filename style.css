@@ -1,0 +1,73 @@
+/* Basic styles sheet for The Immortals on Earth 
+   Author: Ed Keen */
+    
+body {
+  /* Move down content because we have a fixed navbar that is 50px tall */
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: black;
+  text-align: center;
+  margin-bottom: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color:rgb(255,255,194); /* A light parchment color*/
+}
+
+article {
+  background-color:rgb(255,255,194); /* A light parchment color */
+  padding: 15px 15px 15px 15px;
+}
+
+.grad {
+  background: rgb(255,255,194); /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(rgb(255,255,194) 5%, #D7D79A 15%, green 60%); /* Safari 5.1-6.0 */
+  background: -o-radial-gradient(rgb(255,255,194) 5%, #D7D79A 15%, green 60%); /* For Opera 11.6-12.0 */
+  background: -moz-radial-gradient(rgb(255,255,194) 5%, #D7D79A 15%, green 60%); /* For Firefox 3.6-15 */
+  background: radial-gradient(rgb(255,255,194) 5%, #D7D79A 15%, green 60%); /* Standard syntax */
+} 
+
+#intro {
+  background-image: url(images/pathway.jpg)
+}
+
+#library {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(images/HOL02banner.jpg);
+  border-bottom-style: solid;
+  border-width: 5px;
+  border-color: DarkGreen;
+}
+
+.homebanner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(images/serene.jpg);
+  color: green; 
+}
+
+.textdiv {
+  background-color: burlywood;
+}
+
+.jumbotron {
+  background-color:#EDC9AF;
+}
+
+.footer {
+  padding-top: 5px;
+  background-color: rgb(10,10,10); width: 100%;
+  position:fixed;
+  bottom:0;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+
