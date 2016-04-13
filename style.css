@@ -13,6 +13,10 @@ body {
   background-color:rgb(255,255,194); /* A light parchment color*/
 }
 
+table {
+  border: 1;
+}
+
 article {
   background-color:rgb(255,255,194); /* A light parchment color */
   padding: 15px 15px 15px 15px;
@@ -61,6 +65,10 @@ article {
   bottom:0;
   /* Set the fixed height of the footer here */
   height: 30px;
+}
+
+.error {
+  font-weight: bold;
 }
 
 /* Customize container */

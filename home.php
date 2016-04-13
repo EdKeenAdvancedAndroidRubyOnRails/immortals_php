@@ -22,32 +22,17 @@
         <div class="row">
           <div class="col-md-4">
             <h2>Hall of Learning</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>Follow the path of the spiritual warrior and discover the wisdom of the Ancients.  Browse our repository of selected videos and texts.</p>
             <p><a class="btn btn-default" href="halloflearning.php" role="button">Enter &raquo;</a></p>
           </div>
           <div class="col-md-4">
-            <h2>Spiritual Warrior Training</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Personal Consultations</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">Schedule a Time &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Sign Up For Our Newsletter</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="newsletter.php" role="button">Sign Up Now &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Purchase Products</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <h2>Our Online Store</h2>
+            <p>Take a look at our quality wellness products.  We carry products which we know from personal experiences to be beneficial to body and mind.</p>
             <p><a class="btn btn-default" href="products.php" role="button">View Products &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Contact Us</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p>Schedule a personal consultation, ask a question regarding our products or services, sign up for our email, or just say hello.</p>
             <p><a class="btn btn-default" href="contact.php" role="button">Contact Us &raquo;</a></p>
           </div>
         </div>
