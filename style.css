@@ -17,6 +17,10 @@ table {
   border: 1;
 }
 
+td a {
+    color: darkblue;
+  }
+
 article {
   background-color:rgb(255,255,194); /* A light parchment color */
   padding: 15px 15px 15px 15px;

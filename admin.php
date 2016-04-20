@@ -19,11 +19,11 @@
     
     <div class="container">
       <h1>Administrator Only</h1>
-      <h2>Add and Delete Products.</h2><br />
+      <h2>Add, Delete and Edit Products.</h2><br />
       <div>
           <p><a class="btn btn-primary btn-lg" id="button" href="#" role="button">Add New Product</a></p><br />
       </div>
-      
+
       <form enctype="multipart/form-data" method="post" id="add_product" action="<?php echo $_SERVER['PHP_SELF']; ?>">
           
         <?php
@@ -63,7 +63,7 @@
                         }
                         else 
                         {
-                            echo '<p class="error">Sorry, there was a problem uploading your screen shot image.</p>';
+                            echo '<p class="error">Sorry, there was a problem uploading your image.</p>';
                         }
                     }
                     else 
@@ -85,6 +85,7 @@
         ?>
       </form>
       
+      <h4>Click on a product to edit.</h4>
       <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
       
         <?php

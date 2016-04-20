@@ -6,7 +6,8 @@
     *  @param $name product name
     *  @param $description product description
     *  @param $price unit price
-    *  @param $man_id manufacturers id
+    *  @param $picture product picture
+    *  @param $qty_on_hand Quantity of product on hand
     */
     function enterIntoDb($dbc, $name, $description, $price, $picture, $qty_on_hand)
     {
@@ -48,9 +49,12 @@
         
         while ($row = mysqli_fetch_array($result)) 
         {
-          echo '<tr><td><input type="checkbox" value="' . $row['product_id'] . '" name="todelete[]" /></td>' .
-                '<td>' . $row['name'] . '</td><td>' . $row['description'] . '</td><td>' . $row['price'] .'</td>' .
-                '<td>' . $row['qty_on_hand'] . '</td></tr>';
+            // Each entry is a link to the editProduct page
+            echo '<tr><td><input type="checkbox" value="' . $row['product_id'] . '" name="todelete[]" /></td>' .
+                    '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['name'] . '</a></td>' .
+                    '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['description'] . '</a></td>' .
+                    '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['price'] .'</a></td>' .
+                    '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['qty_on_hand'] . '</a></td></tr>';
         }
         
         echo '</table>';
