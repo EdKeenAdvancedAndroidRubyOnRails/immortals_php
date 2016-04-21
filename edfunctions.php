@@ -16,6 +16,19 @@
         mysqli_close($dbc);
     }
     
+    /* Enters the given parameters into the database
+    *  @param $dbc the database connection
+    *  @param $first_name contact first name
+    *  @param $last_name contact last name
+    *  @param $email contact email address
+    */
+    function enterEmailIntoDb($dbc, $first_name, $last_name, $email)
+    {
+        $query = "INSERT INTO friends (date_added, name_last, name_first, email) VALUES (now(),'$first_name', '$last_name', '$email')";
+        mysqli_query($dbc, $query);
+        mysqli_close($dbc);
+    }
+    
     /* Displays all of the products in the database
     *  with checkboxs for deleting.
     *  @param $dbc the database connection

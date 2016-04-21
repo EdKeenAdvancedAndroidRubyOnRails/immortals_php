@@ -10,5 +10,9 @@ $(document).ready(function() {
     $("#button").click(function() {
         form.appendTo($("#add_product"));
     });
+    
+    $("#submitemailform").click(function() {
+        
+    });
 
 });

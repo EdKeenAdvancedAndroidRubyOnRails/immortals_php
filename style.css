@@ -73,6 +73,7 @@ article {
 
 .error {
   font-weight: bold;
+  color: #FF0000;
 }
 
 /* Customize container */
