@@ -26,8 +26,8 @@
           $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
                   or die('Error connecting to MySQL server.'); 
       
-          // Retrieve the user data from MySQL
-          $query = "SELECT product_id, name, description, price, qty_on_hand, picture FROM products";
+          // Retrieve the product data from MySQL
+          $query = "SELECT product_id, name, description, price, qty_on_hand, picture FROM products ORDER BY name";
           $data = mysqli_query($dbc, $query);
       
           // Loop through the array of user data, formatting it as HTML

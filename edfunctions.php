@@ -24,7 +24,7 @@
     */
     function enterEmailIntoDb($dbc, $first_name, $last_name, $email)
     {
-        $query = "INSERT INTO friends (date_added, name_last, name_first, email) VALUES (now(),'$first_name', '$last_name', '$email')";
+        $query = "INSERT INTO friends (date_added, name_last, name_first, email) VALUES (now(),'$last_name', '$first_name', '$email')";
         mysqli_query($dbc, $query);
         mysqli_close($dbc);
     }
@@ -68,6 +68,55 @@
                     '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['description'] . '</a></td>' .
                     '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['price'] .'</a></td>' .
                     '<td><a href="editProduct.php?id=' . $row['product_id'] . '">' . $row['qty_on_hand'] . '</a></td></tr>';
+        }
+        
+        echo '</table>';
+        mysqli_close($dbc);
+    }
+    
+    
+     /* Displays all of the friends in the database ----------------------------------------
+    *  with checkboxs for deleting.
+    *  @param $dbc the database connection
+    */
+    function displayContacts($dbc)
+    {
+        // Delete the customer rows (only if the form has been submitted)
+        if (isset($_POST['submit']) && isset($_POST['todelete'])) 
+        {
+            //variable to keep a running count of removed items
+            $count = 0;
+          
+            foreach ($_POST['todelete'] as $delete_id) 
+            {
+                $query = "DELETE FROM friends WHERE friend_id = $delete_id";
+                $count++;
+                
+                mysqli_query($dbc, $query)
+                        or die('Error querying database.');
+            } 
+        
+            echo $count . '' . ' Contact(s) removed.<br />';
+        }
+        
+        // Display rows with checkboxes for deleting
+        $query = "SELECT * FROM friends";
+        $result = mysqli_query($dbc, $query);
+        
+        echo '<table class="table table-bordered">' . 
+                '<tr><th>Delete</th><th>Last Name</th><th>First Name</th><th>Street Address</th><th>City</th><th>State</th><th>Zip</th><th>Email</th></tr>';
+        
+        while ($row = mysqli_fetch_array($result)) 
+        {
+            // Each entry is a link to the editContact page
+            echo '<tr><td><input type="checkbox" value="' . $row['friend_id'] . '" name="todelete[]" /></td>' .
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['name_last'] . '</a></td>' .
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['name_first'] . '</a></td>' .
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['street_address'] .'</a></td>' .
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['city'] . '</a></td>';
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['state'] . '</a></td>';
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['zip'] . '</a></td>';
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['email'] . '</a></td></tr>';
         }
         
         echo '</table>';

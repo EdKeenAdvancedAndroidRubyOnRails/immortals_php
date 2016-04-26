@@ -36,10 +36,10 @@
                 if (!empty($first_name) && !empty($last_name) && !empty($email))
                 {
                 
-                    //enterEmailIntoDb($dbc, $first_name, $last_name, $email);
+                    enterEmailIntoDb($dbc, $first_name, $last_name, $email);
                     
                     echo '<div class="alert alert-success" role="alert">' . 
-                            '<strong>Success!</strong> Thank you for signing up with us ' . $first_name;
+                            '<strong>Success!</strong> Thank you for signing up with us ' . $first_name . '</div>';
                 }
                 else
                 {
@@ -59,19 +59,8 @@
                     </div>
                 <hr />
                 <div>
-                    <h4>Join Our Mailing List</h4>
-                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <fieldset class="form-group">
-                                <label for="firstname">First Name</label>
-                                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter first name">
-                                <label for="lastname">Last Name</label>
-                                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter last name">
-                                <label for="email">Email address</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
-                                <small class="text-muted">We will never share your email with anyone else.</small><br /><br />
-                                <input type="submit" class="btn btn-primary" name="submitemailform" id="submitemailform" value="Submit" />
-                            </fieldset>
-                        </form>
+                    <h4>Join Our Mailing List!</h4>
+                    <button type="button" class="btn btn-primary" data-toggle="modal"	data-target="#mysignupmodal">Signup</button>
                 </div>
                 <hr />
                 <div>
@@ -81,6 +70,36 @@
             </div>
             <hr />
         </div>
+        
+        <!-- Add email modal ------------------------------------------    -->
+        <div class="modal fade" id="mysignupmodal">
+          	<div class="modal-dialog">
+            	<div class="modal-content">
+          			<div class="modal-header">
+          				  <h3>Let us keep you up to date.</h3>
+          			</div>
+          			<div class="modal-body">
+          			    <form method="post" action="contact.php">
+      				    <fieldset class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter first name">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter last name">
+                            <label for="email">Email address</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                            <p class="text-muted">We will never share your email with anyone else.</p>
+                            <input type="submit" class="btn btn-primary" name="submitemailform" id="submitemailform" value="Submit" />
+                        </fieldset>
+                        </form>
+          			</div>
+          			<div class="modal-footer">
+      				    <button type="button" name="close" class="btn btn-default" data-dismiss="modal">Close</button>
+          			</div>
+          		</div>
+          	</div>
+        </div>
+        <!-- End of modal --------------------------------- -->
+  
         
         <!-- Phone us! modal ------------------------------------------    -->
         <div class="modal fade" id="mymodal">

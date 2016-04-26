@@ -23,17 +23,17 @@
                 <div class="col-md-4">
                     <h2>Hall of Learning</h2>
                     <p>Follow the path of the spiritual warrior and discover the wisdom of the Ancients.  Browse our repository of selected videos and texts.</p>
-                    <p><a class="btn btn-default" href="halloflearning.php" role="button">Enter &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="halloflearning.php" role="button">Enter &raquo;</a></p>
                 </div>
                 <div class="col-md-4">
                     <h2>Our Online Store</h2>
                     <p>Take a look at our quality wellness products.  We carry products which we know from personal experiences to be beneficial to body and mind.</p>
-                    <p><a class="btn btn-default" href="products.php" role="button">View Products &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="products.php" role="button">View Products &raquo;</a></p>
                 </div>
                 <div class="col-md-4">
                     <h2>Contact Us</h2>
                     <p>Schedule a personal consultation, ask a question regarding our products or services, sign up for our email, or just say hello.</p>
-                    <p><a class="btn btn-default" href="contact.php" role="button">Contact Us &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="contact.php" role="button">Contact Us &raquo;</a></p>
                 </div>
             </div>
             <hr>
