@@ -108,6 +108,7 @@
         
         while ($row = mysqli_fetch_array($result)) 
         {
+
             // Each entry is a link to the editContact page
             echo '<tr><td><input type="checkbox" value="' . $row['friend_id'] . '" name="todelete[]" /></td>' .
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['name_last'] . '</a></td>' .
@@ -117,8 +118,7 @@
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['state'] . '</a></td>';
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['zip'] . '</a></td>';
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['email'] . '</a></td></tr>';
-        }
-        
+            }
         echo '</table>';
         mysqli_close($dbc);
     }

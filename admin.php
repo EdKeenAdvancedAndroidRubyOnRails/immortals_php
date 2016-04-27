@@ -21,9 +21,10 @@
          
             <h1>Administrator Only</h1><br />
             
+            <h4>Choose a database to edit:</h4>
             <div class="btn-group" role="group">
                 <a class="btn btn-primary active">Products</button>
-                <a class="btn btn-primary" href="admin_friends.php">Friends</a>
+                <a class="btn btn-primary" href="admin_friends.php">Contacts</a>
             </div>
             
             <h2>Add, Delete and Edit Products.</h2><br />
