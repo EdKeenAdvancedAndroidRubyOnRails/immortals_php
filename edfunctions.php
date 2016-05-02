@@ -114,12 +114,25 @@
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['name_last'] . '</a></td>' .
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['name_first'] . '</a></td>' .
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['street_address'] .'</a></td>' .
-                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['city'] . '</a></td>';
-                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['state'] . '</a></td>';
-                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['zip'] . '</a></td>';
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['city'] . '</a></td>' .
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['state'] . '</a></td>' .
+                    '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['zip'] . '</a></td>' .
                     '<td><a href="editContact.php?id=' . $row['friend_id'] . '">' . $row['email'] . '</a></td></tr>';
             }
         echo '</table>';
+        mysqli_close($dbc);
+    }
+    
+    
+    /* Allows contact with full information to be entered by administrator.
+    *
+    *
+    */
+    function enterNewContact($dbc, $last_name, $first_name, $street_address, $city, $state, $zip, $email)
+    {
+        $query = "INSERT INTO friends (date_added, name_last, name_first, street_address, city, state, zip, email)
+                VALUES (now(),'$last_name', '$first_name', '$street_address', '$city', '$state', '$zip', '$email')";
+        mysqli_query($dbc, $query);
         mysqli_close($dbc);
     }
 ?>

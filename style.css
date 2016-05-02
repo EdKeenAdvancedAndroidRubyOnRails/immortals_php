@@ -71,9 +71,17 @@ article {
   height: 30px;
 }
 
+.intro-text {
+  font-size: large;
+}
+
 .error {
   font-weight: bold;
   color: #FF0000;
+}
+
+.top {
+  color: darkblue;
 }
 
 /* Customize container */

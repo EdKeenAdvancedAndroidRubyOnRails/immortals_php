@@ -21,6 +21,8 @@
             <h1>Administrator Only</h1>
             <h2>Edit Product.</h2><br />
             
+            <a class="btn btn-primary" href="admin.php" role="button">Back To Edit Products</a><br /><br />
+            
             <?php
                 require_once('appvars.php');
                 require_once('connectvars.php');
@@ -33,6 +35,7 @@
                 // Grab the profile data from the POST
                 if (isset($_POST['submit'])) 
                 {
+                    $product_id = $_POST['product_id'];
                     $name = mysqli_real_escape_string($dbc, trim($_POST['name']));
                     $description = mysqli_real_escape_string($dbc, trim($_POST['description']));
                     $price = mysqli_real_escape_string($dbc, trim($_POST['price']));
@@ -41,7 +44,7 @@
                     $new_picture_type = $_FILES['new_picture']['type'];
                     $new_picture_size = $_FILES['new_picture']['size'];
                     $qty_on_hand = mysqli_real_escape_string($dbc, trim($_POST['qty_on_hand']));
-                    list($new_picture_width, $new_picture_height) = getimagesize($_FILES['new_picture']['tmp_name']);
+                    if (!empty($_FILES['new_picture']['tmp_name']))list($new_picture_width, $new_picture_height) = getimagesize($_FILES['new_picture']['tmp_name']);
                     $error = false;
                     
                     // Validate the image file.
@@ -61,7 +64,6 @@
                                     {
                                         @unlink(I_UPLOADPATH . $old_picture);
                                     }
-                                    
                                 }
                                 else 
                                 {
@@ -88,13 +90,13 @@
                         {
                             if (!empty($new_picture))
                             {
-                                $query = "UPDATE immortalsdb SET name = '$name', description = '$description', price = '$price'," .
-                                        "picture = '$new_picture', qty_on_hand = '$qty_on_hand'";
+                                $query = "UPDATE products SET name = '$name', description = '$description', price = '$price'," .
+                                        "picture = '$new_picture', qty_on_hand = '$qty_on_hand' WHERE product_id = $product_id";
                             }
                             else
                             {
-                                $query = "UPDATE immortalsdb SET name = '$name', description = '$description', price = '$price'," .
-                                        "qty_on_hand = '$qty_on_hand'";
+                                $query = "UPDATE products SET name = '$name', description = '$description', price = '$price'," .
+                                        "qty_on_hand = '$qty_on_hand' WHERE product_id = $product_id";
                             }
                         }
                         else
@@ -102,14 +104,12 @@
                             echo '<p class="error">You must enter all of the product data (the picture is optional).</p>';
                         }
                         
-                        mysqli_query($dbc, $query)
-                                    or die('Error querying database.');
-                                    
+                        mysqli_query($dbc, $query);
+
                         echo 'Item successfully entered into database.';
                         
                         mysqli_close($dbc);
                         exit();
-
                     }
                 }
                 else 
@@ -132,13 +132,11 @@
                         echo '<p class="error">There was a problem accessing your product.</p>';
                     }
                 }
-                
-                mysqli_close($dbc);
-                    
             ?>
             
             <div>
                 <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <input type="hidden" name="product_id" value="<?php echo $_GET['id']; ?>" />
                     <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MM_MAXFILESIZE; ?>" />
                     <div class='form-group'><label for='name'>Name</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?php if (!empty($name)) echo $name; ?>" /></div>
@@ -157,13 +155,14 @@
                     
                     <div class='form-group'><label for='qty_on_hand'>Quantity On Hand: </label>
                     <input type='text' class='form-control' name='qty_on_hand' value="<?php if (!empty($qty_on_hand)) echo $qty_on_hand; ?>" /></div>
-                    <input type="submit" value="Save Information" name="submit" />
+                    <input type="submit" class="btn btn-primary" value="Save Information" name="submit" />
+                    <a class="btn btn-primary" href="admin.php" role="button">Cancel</a>
                 </form>
             </div>
         </div>
       
         <?php
-            // Display the footer ------
+            // Display the footer -----------------------
             require_once('footer.php');
         ?>
       
