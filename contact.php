@@ -12,8 +12,9 @@
         ?>
         
         <div class="jumbotron homebanner">
-          <h1>Contact Us</h1>
-          <p class="lead"></p>
+            <img src="images/Immortals-logo-green.jpg" alt="logo">
+            <h1>Contact Us</h1>
+            <p class="lead"></p>
         </div>
         <div>
             

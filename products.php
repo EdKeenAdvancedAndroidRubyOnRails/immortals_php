@@ -12,6 +12,7 @@
     ?>
     
     <div class="jumbotron homebanner">
+      <img src="images/Immortals-logo-green.jpg" alt="logo">
       <h1>Products</h1>
       <p class="lead">Explore our line of quality personal wellness products.</p>
     </div>
@@ -58,6 +59,10 @@
       ?>
     
     </div>
+    
+    <div>
+        <a class="top" href="#">Back to Top</a>
+    </div>    
 
     <?php
         require_once('footer.php');

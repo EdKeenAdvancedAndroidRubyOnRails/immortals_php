@@ -12,6 +12,7 @@
         ?>
         
         <div class="jumbotron homebanner">
+            <img src="images/Immortals-logo-green.jpg" alt="logo">
             <h1>Hall of Learning</h1></h1>
             <p class="lead"></p>
         </div>
@@ -95,6 +96,9 @@
         </div>
         
         <hr class="featurette-divider">
+        <div>
+            <a class="top" href="#">Back to Top</a>
+        </div>    
 
         </div> <!-- /.container -->
 
