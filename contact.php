@@ -17,7 +17,7 @@
             <p class="lead"></p>
         </div>
         <div>
-            
+            <img src="images/contact.jpg" class="img-rounded" alt="fingers touching"></img>
             <h3>Feel free to contact us. We will answer any questions that you may have.</h3>
         
         <?php
