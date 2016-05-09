@@ -63,12 +63,13 @@
                 <hr />
                 <div>
                     <h4>Join Our Mailing List!</h4>
-                    <button type="button" class="btn btn-primary" data-toggle="modal"	data-target="#mysignupmodal">Signup</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mysignupmodal">Signup</button>
                 </div>
                 <hr />
                 <div>
                     <h4>By Phone:</h4>
                     <button class="btn btn-primary" data-toggle="modal"	data-target="#myphonemodal">Give Us a Call!</button>
+                    
                 </div>
             </div>
             <hr />

@@ -69,6 +69,23 @@ article {
   background-color:#EDC9AF;
 }
 
+.matrixmodal {
+  background-image: url(images/dreamModal.jpg);
+}
+
+.go-left {
+  margin-left: 100px;
+  margin-right: 5px;
+}
+
+.matrix-results {
+  border-style: solid;
+  border-width: 3px;
+  border-color: darkblue;
+  background-image: url(images/matrix1.jpg);
+  margin-top: 25px;
+}
+
 .footer {
   padding-top: 5px;
   background-color: rgb(10,10,10); width: 100%;
